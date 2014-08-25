@@ -1,7 +1,6 @@
 package belajar.java;
-
 public class Halo {
-    public static void main(String[] args){
-        System.out.println("Halo");
-    }
+public static void main(String[] args){
+System.out.println("Halo  Belajar DAY 1");
+}
 }
