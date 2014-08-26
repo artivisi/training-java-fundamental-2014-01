@@ -14,7 +14,6 @@ create table customer(
     tanggal_daftar date
 );
 
-<<<<<<< HEAD
 create table gudang(
     id_gudang integer primary key,
     kode_gudang varchar(10),
@@ -35,9 +34,7 @@ create table region(
 );
 
 create table kategori(
-  id integer primary key,
-  kode varchar2,
-  nama varchar2,
-  definisi varchar2
->>>>>>> b56e4c0904fb40dfd3e6fe9f4e0d2074cd82d997
+    id_kat integer primary key,
+    kode_kat varchar (10),
+    nama_kat varchar (30)
 );
