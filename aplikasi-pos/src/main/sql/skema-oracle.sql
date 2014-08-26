@@ -5,3 +5,11 @@ create table produk(
   harga decimal(19,2),
   tanggal_kadaluarsa date
 );
+
+create table customer(
+    id_csr integer primary let,
+    kode_csr vsrchar2,
+    nama_csr varchar2,
+    alamat_csr varchar2,
+    tanggal_daftar date
+);
