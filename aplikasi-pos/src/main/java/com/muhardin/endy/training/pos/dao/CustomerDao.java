@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  *
- * @author CEISA-DJBC 
+ * @author CEISA-DJBC dhi
  */
 public class CustomerDao {
     public void simpan(Customer c){
