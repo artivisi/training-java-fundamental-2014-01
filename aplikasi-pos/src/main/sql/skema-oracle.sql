@@ -1,25 +1,48 @@
-create table produk(
-  id integer primary key,
-  kode varchar2,
-  nama varchar2,
-  harga decimal(19,2),
-  tanggal_kadaluarsa date
-);
+-- create table produk(
+--   id integer primary key,
+--   kode varchar2,
+--   nama varchar2,
+--   harga decimal(19,2),
+--   tanggal_kadaluarsa date
+-- );
+-- 
+-- create table customer(
+--     id_csr integer primary key,
+--     kode_csr varchar2(20),
+--     nama_csr varchar2(255),
+--     alamat_csr varchar2(255),
+--     tanggal_daftar date
+-- );
 
 create table customer(
-    id_csr integer primary let,
-    kode_csr varchar2,
-    nama_csr varchar2,
-    alamat_csr varchar2,
+    id_csr integer primary key,
+    kode_csr varchar (10),
+    nama_csr varchar(30),
+    alamat_csr varchar (50),
     tanggal_daftar date
+);
+
+create table gudang(
+    id_gudang integer primary key,
+    kode_gudang varchar(10),
+    nama_gudang varchar(30),
+    alamat_gudang varchar(50),
+    nama_barang varchar(30),
+    stok_barang integer
 );
 
 create table region(
     id integer primary key,
-    idregion varchar2(15),
-    provinsi varchar2(50),
-    kota varchar2(50),
-    kecamatan varchar2(50),
-    desa varchar2(50),
+    id_reg varchar (10),
+    provinsi varchar (20),
+    kota varchar (30),
+    kecamatan varchar (30),
+    desa varchar (30),
     created date
+);
+
+create table kategori(
+    id_kat integer primary key,
+    kode_kat varchar (10),
+    nama_kat varchar (30)
 );

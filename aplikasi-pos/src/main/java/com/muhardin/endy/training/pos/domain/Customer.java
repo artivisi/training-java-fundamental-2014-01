@@ -18,38 +18,39 @@ public class Customer {
     private String namaCsr;
     private String alamatCsr;
     private Date tanggalDaftar;
-    
-    public Integer getId(){
+
+    public Integer getIdCsr() {
         return idCsr;
     }
-    
-    public void setId(Integer id){
-        this.idCsr = id;
+
+    public void setIdCsr(Integer idCsr) {
+        this.idCsr = idCsr;
     }
-    
-    public String getKode(){
+
+    public String getKodeCsr() {
         return kodeCsr;
     }
-    
-    public void setKode(String kode){
-        this.kodeCsr = kode;
+
+    public void setKodeCsr(String kodeCsr) {
+        this.kodeCsr = kodeCsr;
     }
-    public String getNama(){
+
+    public String getNamaCsr() {
         return namaCsr;
     }
-    
-    public void setNama(String nama){
-        this.namaCsr = nama;
+
+    public void setNamaCsr(String namaCsr) {
+        this.namaCsr = namaCsr;
     }
-    
-    public String getAlamat(){
+
+    public String getAlamatCsr() {
         return alamatCsr;
     }
-    
-    public void setAlamat(String alamat){
-        this.alamatCsr = alamat;
+
+    public void setAlamatCsr(String alamatCsr) {
+        this.alamatCsr = alamatCsr;
     }
-    
+
     public Date getTanggalDaftar() {
         return tanggalDaftar;
     }
@@ -57,4 +58,6 @@ public class Customer {
     public void setTanggalDaftar(Date tanggalDaftar) {
         this.tanggalDaftar = tanggalDaftar;
     }
+    
+    
 }

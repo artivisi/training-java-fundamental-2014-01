@@ -21,16 +21,17 @@ import java.util.logging.Logger;
  */
 public class CustomerDao {
     
-    private static final String SQL_INSERT = "ïnsert into customer (id_csr, kode_csr, nama_csr, alamat_csr, tanggal_daftar)"
-                                +"values (?,?,?,?,?)";
+    private static final String SQL_INSERT = "insert into customer (id_csr, kode_csr, nama_csr, alamat_csr, tanggal_daftar)" 
+            + "values (?,?,?,?,?)";
+    
     public void simpan(Customer c){
      try {
             Connection koneksi = KoneksiDatabase.bukaKoneksi();
             PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT);
-            ps.setInt(1, c.getId());
-            ps.setString(2, c.getKode());
-            ps.setString(3, c.getNama());
-            ps.setString(4, c.getAlamat());
+            ps.setInt(1, c.getIdCsr());
+            ps.setString(2, c.getKodeCsr());
+            ps.setString(3, c.getNamaCsr());
+            ps.setString(4, c.getAlamatCsr());
             ps.setDate(5, new java.sql.Date(c.getTanggalDaftar().getTime()));
             int hasil = ps.executeUpdate();
             System.out.println(hasil+" record berhasil diinsert");
