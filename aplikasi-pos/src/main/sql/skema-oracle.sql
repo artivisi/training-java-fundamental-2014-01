@@ -14,12 +14,14 @@ create table customer(
     tanggal_daftar date
 );
 
-create table customer(
-    id integer primary let,
-    kode_gudang vsrchar2,
-    nama_gudang varchar2,
-    alamat_gudang varchar2,
-    nama_barang varchar2,
-    strok_barang integer
+create table kantor_cabang(
+    id_kantorCbg integer primary let,
+    kode_kantorCbg vsrchar2,
+    nama_kantorCbg varchar2,
+    alamat_kantorCbg varchar2,
+    noTelp_kantorCbg varchar2,
+    namaKepala_kantorCbg varchar2
 );
+
+
 
