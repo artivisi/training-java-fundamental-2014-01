@@ -16,7 +16,7 @@ public class KoneksiDatabase {
         Connection koneksi = null;
         try {
         // 1. Inisialisasi driver database
-        Class.forName(DATABASE_DRIVER);
+        Class.forName("oracle.jdbc.driver.OracleDriver");
         
         // 2. Connect ke database
             koneksi = DriverManager
