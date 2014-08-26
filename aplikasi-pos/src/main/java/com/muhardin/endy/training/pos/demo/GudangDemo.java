@@ -4,6 +4,7 @@
  */
 package com.muhardin.endy.training.pos.demo;
 
+import com.muhardin.endy.training.pos.dao.GudangDao;
 import com.muhardin.endy.training.pos.domain.Gudang;
 
 /**
@@ -34,6 +35,9 @@ public class GudangDemo {
             System.out.println("Stock Barang  =  " + g.getStokBarang());
 
             System.out.println("--------------------------------------");
+
+            GudangDao gd = new GudangDao();
+            gd.simpan(g);
         }
     }
 }

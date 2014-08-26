@@ -14,11 +14,35 @@
 --     tanggal_daftar date
 -- );
 
-create table penjualan(
+create table customer(
+    id_csr integer primary key,
+    kode_csr varchar (10),
+    nama_csr varchar(30),
+    alamat_csr varchar (50),
+    tanggal_daftar date
+);
+
+create table gudang(
+    id_gudang integer primary key,
+    kode_gudang varchar(10),
+    nama_gudang varchar(30),
+    alamat_gudang varchar(50),
+    nama_barang varchar(30),
+    stok_barang integer
+);
+
+create table region(
     id integer primary key,
-    nama_barang varchar2(50),
-    nama_pembeli varchar2(50),
-    jml_barang integer,
-    harga decimal(19,2),
-    tgl_penjualan date
+    id_reg varchar (10),
+    provinsi varchar (20),
+    kota varchar (30),
+    kecamatan varchar (30),
+    desa varchar (30),
+    created date
+);
+
+create table kategori(
+    id_kat integer primary key,
+    kode_kat varchar (10),
+    nama_kat varchar (30)
 );

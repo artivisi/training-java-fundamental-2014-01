@@ -4,6 +4,7 @@ public class Kategori {
     private Integer id;
     private String kode;
     private String nama;
+    private String definisi;
 
     public Integer getId() {
         return id;
@@ -28,6 +29,12 @@ public class Kategori {
     public void setNama(String nama) {
         this.nama = nama;
     }
-    
-    
+
+    public String getDefinisi() {
+        return definisi;
+    }
+
+    public void setDefinisi(String definisi) {
+        this.definisi = definisi;
+    }
 }
