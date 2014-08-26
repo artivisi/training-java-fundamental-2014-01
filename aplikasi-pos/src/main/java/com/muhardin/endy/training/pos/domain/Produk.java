@@ -4,11 +4,20 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Produk {
+    private static Integer jumlahStok;
     private Integer id;
     private String kode;
     private String nama;
     private BigDecimal harga;
     private Date tanggalKadaluarsa;
+
+    public static Integer getJumlahStok() {
+        return jumlahStok;
+    }
+
+    public static void setJumlahStok(Integer jumlahStok) {
+        Produk.jumlahStok = jumlahStok;
+    }
 
     public Integer getId() {
         return id;
