@@ -38,7 +38,7 @@ public class ProdukDemo {
         System.out.println("Jumlah stok p "+p.getJumlahStok());
 
         System.out.println("Jumlah stok "+Produk.getJumlahStok());
-        ///---------
+        ///---------testing
         
         ProdukDao ex = new ProdukDao();
         ex.simpan(p);
