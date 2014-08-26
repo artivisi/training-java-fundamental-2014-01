@@ -22,7 +22,7 @@ public class ProdukDao {
             ps.setString(2, p.getKode());
             ps.setString(3, p.getNama());
             ps.setBigDecimal(4, p.getHarga());
-            ps.setDate(4, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
+            ps.setDate(5, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
             int hasil = ps.executeUpdate();
             System.out.println(hasil+" record berhasil diinsert");
         } catch (SQLException ex) {

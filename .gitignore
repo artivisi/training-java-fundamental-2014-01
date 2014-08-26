@@ -1,1 +1,2 @@
-/aplikasi-pos/target/
+# Maven Ignore
+target
