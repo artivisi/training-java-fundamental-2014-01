@@ -13,3 +13,10 @@ create table customer(
     alamat_csr varchar2,
     tanggal_daftar date
 );
+
+create table kategori(
+  id integer primary key,
+  kode varchar2,
+  nama varchar2,
+  definisi varchar2
+);
