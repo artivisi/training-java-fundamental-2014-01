@@ -8,8 +8,18 @@ create table produk(
 
 create table customer(
     id_csr integer primary let,
-    kode_csr vsrchar2,
+    kode_csr varchar2,
     nama_csr varchar2,
     alamat_csr varchar2,
     tanggal_daftar date
+);
+
+create table region(
+    id integer primary key,
+    idregion varchar2(15),
+    provinsi varchar2(50),
+    kota varchar2(50),
+    kecamatan varchar2(50),
+    desa varchar2(50),
+    created date
 );
