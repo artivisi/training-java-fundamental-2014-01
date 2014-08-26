@@ -25,6 +25,7 @@ public class ProdukDao {
             ps.setDate(5, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
             int hasil = ps.executeUpdate();
             System.out.println(hasil+" record berhasil diinsert");
+            KoneksiDatabase.tutupKoneksi(koneksi);
         } catch (SQLException ex) {
             Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
         }

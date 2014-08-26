@@ -1,5 +1,6 @@
 package com.muhardin.endy.training.pos.demo;
 
+import com.muhardin.endy.training.pos.dao.ProdukDao;
 import com.muhardin.endy.training.pos.domain.Produk;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -38,5 +39,7 @@ public class ProdukDemo {
 
         System.out.println("Jumlah stok "+Produk.getJumlahStok());
         
+        ProdukDao pd = new ProdukDao();
+        pd.simpan(p);
     }
 }
