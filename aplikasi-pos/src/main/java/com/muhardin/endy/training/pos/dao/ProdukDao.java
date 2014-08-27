@@ -16,6 +16,7 @@ public class ProdukDao {
 
     private static final String SQL_INSERT = "insert into produk (id,kode,nama,harga,tanggal_kadaluarsa)"
             + "values (?,?,?,?,?)";
+    private static final String SQL_DELETE = "delete from produk where id = ?";
     private static final String SQL_SELECT_BY_ID = "select * from produk where id = ?";
     private static final String SQL_SELECT_SEMUA = "select * from produk";
 
@@ -37,7 +38,16 @@ public class ProdukDao {
     }
 
     public void hapus(Produk p) {
-
+        try {
+            Connection koneksi = KoneksiDatabase.bukaKoneksi();
+            PreparedStatement ps = koneksi.prepareStatement(SQL_DELETE);
+            ps.setInt(1, p.getId());
+            int hasil = ps.executeUpdate();
+            System.out.println(hasil + " record berhasil dihapus");
+            KoneksiDatabase.tutupKoneksi(koneksi);
+        } catch (SQLException ex) {
+            Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public Produk cariById(Integer id) {
