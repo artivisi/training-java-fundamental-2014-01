@@ -1,0 +1,10 @@
+id,kodeGudang,namaGudang,alamatGudang,namaBarang,stokBarang
+1,GD01,Gudang1,Jl Gudang 1,Barang01,01
+2,GD02,Gudang2,Jl Gudang 2,Barang02,02
+3,GD03,Gudang3,Jl Gudang 3,Barang03,03
+4,GD04,Gudang4,Jl Gudang 4,Barang04,04
+5,GD05,Gudang5,Jl Gudang 5,Barang05,05
+6,GD06,Gudang6,Jl Gudang 6,Barang06,06
+7,GD07,Gudang7,Jl Gudang 7,Barang07,07
+8,GD08,Gudang8,Jl Gudang 8,Barang08,08
+9,GD09,Gudang9,Jl Gudang 9,Barang09,09

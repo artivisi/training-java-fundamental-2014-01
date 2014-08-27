@@ -14,13 +14,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ProdukImporter {
-    public List<Produk> importFile(File f){
-        List<Produk> hasil = new ArrayList<Produk>();
+    public HasilImportProduk importFile(File f){
+        List<Produk> dataProduk = new ArrayList<Produk>();
+        HasilImportProduk hasil = new HasilImportProduk();
+        hasil.setData(dataProduk);
         try {
             
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String data = br.readLine();
+            
+            Integer noBaris = 1;
             
             if(data == null){
                 System.out.println("Tidak ada data");
@@ -30,24 +34,45 @@ public class ProdukImporter {
             SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             
             while((data = br.readLine()) != null){
+                noBaris++;
                 System.out.println("Data : "+data);
                 String[] baris = data.split(",");
                 if(baris.length != 5){
                     System.out.println("Data invalid, hanya ada "+baris.length+" field");
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Jumlah field salah, seharusnya 5, tapi ternyata "+baris.length);
+                    hasil.getDaftarError().add(err);
                     continue;
                 }
                 Produk p = new Produk();
                 p.setId(Integer.parseInt(baris[0]));
                 p.setKode(baris[1]);
                 p.setNama(baris[2]);
-                p.setHarga(new BigDecimal(baris[3]));
                 try {
+                    p.setHarga(new BigDecimal(baris[3]));
                     p.setTanggalKadaluarsa(formatter.parse(baris[4]));
                 } catch (ParseException ex) {
                     System.out.println("Gagal parsing tanggal");
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Format tanggal salah, harusnya dd-MM-yyyy");
+                    hasil.getDaftarError().add(err);
                     ex.printStackTrace();
+                    continue;
+                } catch (NumberFormatException ex){
+                    System.out.println("Gagal parsing harga");
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Informasi harga harus angka semua");
+                    hasil.getDaftarError().add(err);
+                    ex.printStackTrace();
+                    continue;
                 }
-                hasil.add(p);
+                dataProduk.add(p);
             }
             
             System.out.println("Selesai membaca file");
