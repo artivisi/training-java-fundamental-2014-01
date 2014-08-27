@@ -16,11 +16,13 @@ public class KoneksiDatabase {
         Connection koneksi = null;
         try {
         // 1. Inisialisasi driver database
-        Class.forName("oracle.jdbc.driver.OracleDriver");
+        Class.forName(DATABASE_DRIVER);
         
         // 2. Connect ke database
             koneksi = DriverManager
                     .getConnection("jdbc:oracle:thin:@localhost:1521:xe", "pelatihan", "1");
+ //                   .getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
+
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(KoneksiDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
