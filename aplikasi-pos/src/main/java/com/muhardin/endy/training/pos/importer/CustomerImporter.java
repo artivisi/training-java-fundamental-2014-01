@@ -22,6 +22,8 @@ public class CustomerImporter {
             BufferedReader br = new BufferedReader(fr);
             String data = br.readLine();
             
+            Integer noBaris = 1;
+                    
             if(data == null){
                 System.out.println("Tidak ada data");
                 return null;       
