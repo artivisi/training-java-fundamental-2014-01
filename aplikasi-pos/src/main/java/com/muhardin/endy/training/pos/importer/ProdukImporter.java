@@ -14,8 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ProdukImporter {
-     public HasilImportProduk importFile(File f){
-        
+    public HasilImportProduk importFile(File f){
         List<Produk> dataProduk = new ArrayList<Produk>();
         HasilImportProduk hasil = new HasilImportProduk();
         hasil.setData(dataProduk);

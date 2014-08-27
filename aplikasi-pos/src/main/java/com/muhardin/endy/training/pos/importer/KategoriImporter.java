@@ -22,17 +22,13 @@ import java.util.logging.Logger;
  */
 public class KategoriImporter {
 
-    public HasilImportKategori importFile(File f) {
-        List<Kategori> dataKategori = new ArrayList<Kategori>();
-        HasilImportKategori hasil = new HasilImportKategori();
-        hasil.setData(dataKategori);
+    public List<Kategori> importFile(File f) {
+        List<Kategori> hasil = new ArrayList<Kategori>();
         try {
 
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String data = br.readLine();
-
-            Integer noBaris = 1;
 
             if (data == null) {
                 System.out.println("Tidak ada data");
@@ -40,16 +36,10 @@ public class KategoriImporter {
             }
 
             while ((data = br.readLine()) != null) {
-                noBaris++;
                 System.out.println("Data : " + data);
                 String[] baris = data.split(",");
                 if (baris.length != 4) {
                     System.out.println("Data invalid, hanya ada " + baris.length + " field");
-                    ImportError err = new ImportError();
-                    err.setBaris(noBaris);
-                    err.setData(data);
-                    err.setKeterangan("Jumlah field salah, seharusnya 4, tapi ternyata " + baris.length);
-                    hasil.getDaftarError().add(err);
                     continue;
                 }
                 Kategori k = new Kategori();
@@ -57,10 +47,10 @@ public class KategoriImporter {
                 k.setKode(baris[1]);
                 k.setNama(baris[2]);
                 k.setDefinisi(baris[3]);
-                dataKategori.add(k);
+                hasil.add(k);
 
-//                KategoriDao kd = new KategoriDao();
-//                kd.simpan(k);
+                KategoriDao kd = new KategoriDao();
+                kd.simpan(k);
             }
 
             System.out.println("Selesai membaca file");
