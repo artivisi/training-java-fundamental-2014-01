@@ -14,7 +14,7 @@ public class ProdukDemo {
         String kode; // deklarasi
         kode = "P-001"; // inisialisasi
         Produk p = new Produk(); // deklarasi + inisialisasi
-        p.setId(100);
+        p.setId(103);
         p.setKode("P-001");
         p.setNama("Produk 001");
         p.setHarga(new BigDecimal("150000.00"));
@@ -41,6 +41,8 @@ public class ProdukDemo {
         System.out.println("Jumlah stok " + Produk.getJumlahStok());
 
         ProdukDao pd = new ProdukDao();
-        pd.simpan(p);
+//        pd.simpan(p);
+        pd.semuaProduk();
+        pd.cariById(p.getId());
     }
 }

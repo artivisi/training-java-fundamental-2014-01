@@ -20,7 +20,7 @@ public class KoneksiDatabase {
         
         // 2. Connect ke database
             koneksi = DriverManager
-                    .getConnection("jdbc:oracle:thin:@localhost:1521:XE, pelatihan, 1");
+                    .getConnection("jdbc:oracle:thin:@localhost:1522:XE", "pelatihan", "1");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(KoneksiDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
