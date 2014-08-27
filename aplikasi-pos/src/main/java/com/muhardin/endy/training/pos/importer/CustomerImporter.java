@@ -15,12 +15,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CustomerImporter {
-    public List<Customer> importFile(File f){
-        List<Customer> hasil = new ArrayList<Customer>();
+    public HasilImportCustomer importFile(File f){
+        
+        List<Customer> dataCustomer = new ArrayList<Customer>();
+        HasilImportCustomer hasil = new HasilImportCustomer();
+        hasil.setData(dataCustomer);
         try{
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String data = br.readLine();
+            
+            Integer noBaris = 1;
             
             if(data == null){
                 System.out.println("Tidak ada data");
@@ -33,6 +38,11 @@ public class CustomerImporter {
                 String[] baris = data.split(",");
                 if(baris.length != 5){
                     System.out.println("Data invalid, hanya ada "+baris.length+" field");
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Jumlah field salah, seharusnya 5, tapi ternyata "+baris.length);
+                    hasil.getDaftarError().add(err);
                     continue;
                 }
                 
@@ -45,15 +55,21 @@ public class CustomerImporter {
                     c.setTanggalDaftar(formatter.parse(baris[4]));
                 } catch (ParseException ex) {
                     System.out.println("Gagal parsing tanggal");
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Format tanggal salah, harusnya dd-MM-yyyy");
+                    hasil.getDaftarError().add(err);
                     ex.printStackTrace();
+                    continue;
                 }
-                hasil.add(c);
+                dataCustomer.add(c);
             }
             
             System.out.println("Selesai membaca file");
             br.close();
     }catch (IOException ex) {
-            Logger.getLogger(ProdukImporter.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CustomerImporter.class.getName()).log(Level.SEVERE, null, ex);
         }
         return hasil;
     }
