@@ -31,6 +31,7 @@ public class ProdukDemo {
         Produk p2 = new Produk();
         p2.setId(200);
         p2.setJumlahStok(20);
+
         
         System.out.println("ID p2 : "+p2.getId());
         System.out.println("ID p : "+p.getId());
@@ -39,9 +40,10 @@ public class ProdukDemo {
         System.out.println("Jumlah stok p "+p.getJumlahStok());
 
         System.out.println("Jumlah stok "+Produk.getJumlahStok());
-        
+
         ProdukDao pd = new ProdukDao();
-//        pd.simpan(p);
+        pd.simpan(p);
+
         pd.semuaProduk();
         pd.cariById(p.getId());
     }
