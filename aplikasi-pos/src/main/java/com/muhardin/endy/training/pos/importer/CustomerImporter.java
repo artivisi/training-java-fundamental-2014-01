@@ -15,13 +15,26 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CustomerImporter {
+<<<<<<< HEAD
     public List<Customer> importFile(File f){
         List<Customer> hasil = new ArrayList<Customer>();
+=======
+    public HasilImportCustomer importFile(File f){
+        
+        List<Customer> dataCustomer = new ArrayList<Customer>();
+        HasilImportCustomer hasil = new HasilImportCustomer();
+        hasil.setData(dataCustomer);
+>>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
         try{
             FileReader fr = new FileReader(f);
             BufferedReader br = new BufferedReader(fr);
             String data = br.readLine();
             
+<<<<<<< HEAD
+=======
+            Integer noBaris = 1;
+            
+>>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
             if(data == null){
                 System.out.println("Tidak ada data");
                 return null;       
@@ -33,6 +46,14 @@ public class CustomerImporter {
                 String[] baris = data.split(",");
                 if(baris.length != 5){
                     System.out.println("Data invalid, hanya ada "+baris.length+" field");
+<<<<<<< HEAD
+=======
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Jumlah field salah, seharusnya 5, tapi ternyata "+baris.length);
+                    hasil.getDaftarError().add(err);
+>>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
                     continue;
                 }
                 
@@ -45,15 +66,31 @@ public class CustomerImporter {
                     c.setTanggalDaftar(formatter.parse(baris[4]));
                 } catch (ParseException ex) {
                     System.out.println("Gagal parsing tanggal");
+<<<<<<< HEAD
                     ex.printStackTrace();
                 }
                 hasil.add(c);
+=======
+                    ImportError err = new ImportError();
+                    err.setBaris(noBaris);
+                    err.setData(data);
+                    err.setKeterangan("Format tanggal salah, harusnya dd-MM-yyyy");
+                    hasil.getDaftarError().add(err);
+                    ex.printStackTrace();
+                    continue;
+                }
+                dataCustomer.add(c);
+>>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
             }
             
             System.out.println("Selesai membaca file");
             br.close();
     }catch (IOException ex) {
+<<<<<<< HEAD
             Logger.getLogger(ProdukImporter.class.getName()).log(Level.SEVERE, null, ex);
+=======
+            Logger.getLogger(CustomerImporter.class.getName()).log(Level.SEVERE, null, ex);
+>>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
         }
         return hasil;
     }
