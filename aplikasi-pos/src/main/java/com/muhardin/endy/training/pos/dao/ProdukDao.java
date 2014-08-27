@@ -29,11 +29,7 @@ public class ProdukDao {
             ps.setBigDecimal(4, p.getHarga());
             ps.setDate(5, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
             int hasil = ps.executeUpdate();
-<<<<<<< HEAD
-            System.out.println(hasil+" record berhasil diinsert");
-=======
             System.out.println(hasil + " record berhasil diinsert");
->>>>>>> 502154c58d5a5e58bb7aebb4a9078f7b67811a6e
             KoneksiDatabase.tutupKoneksi(koneksi);
         } catch (SQLException ex) {
             Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);

@@ -31,7 +31,6 @@ public class ProdukDemo {
         Produk p2 = new Produk();
         p2.setId(200);
         p2.setJumlahStok(20);
-<<<<<<< HEAD
         
         System.out.println("ID p2 : "+p2.getId());
         System.out.println("ID p : "+p.getId());
@@ -41,11 +40,6 @@ public class ProdukDemo {
 
         System.out.println("Jumlah stok "+Produk.getJumlahStok());
         
-=======
-
-
-    
->>>>>>> 502154c58d5a5e58bb7aebb4a9078f7b67811a6e
         ProdukDao pd = new ProdukDao();
         pd.simpan(p);
     }
