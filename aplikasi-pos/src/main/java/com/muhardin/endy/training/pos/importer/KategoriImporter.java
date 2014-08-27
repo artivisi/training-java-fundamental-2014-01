@@ -5,6 +5,7 @@
  */
 package com.muhardin.endy.training.pos.importer;
 
+import com.muhardin.endy.training.pos.dao.KategoriDao;
 import com.muhardin.endy.training.pos.domain.Kategori;
 import java.io.BufferedReader;
 import java.io.File;
@@ -47,6 +48,9 @@ public class KategoriImporter {
                 k.setNama(baris[2]);
                 k.setDefinisi(baris[3]);
                 hasil.add(k);
+
+                KategoriDao kd = new KategoriDao();
+                kd.simpan(k);
             }
 
             System.out.println("Selesai membaca file");
