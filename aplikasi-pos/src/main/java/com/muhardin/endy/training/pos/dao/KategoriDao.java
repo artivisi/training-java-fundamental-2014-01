@@ -15,6 +15,7 @@ public class KategoriDao {
     
     private static final String SQL_INSERT = "insert into kategori (id,kode,nama,definisi)"
             + "values (?,?,?,?)";
+    private static final String SQL_DELETE = "delete from kategori where id = ?";
     private static final String SQL_SELECT_BY_ID = "select * from kategori where id = ?";
     private static final String SQL_SELECT_SEMUA = "select * from kategori";
     
@@ -34,7 +35,16 @@ public class KategoriDao {
     }
     
     public void hapus(Kategori k){
-        
+        try {
+            Connection koneksi = KoneksiDatabase.bukaKoneksi();
+            PreparedStatement ps = koneksi.prepareStatement(SQL_DELETE);
+            ps.setInt(1, k.getId());
+            int hasil = ps.executeUpdate();
+            System.out.println(hasil + " record berhasil dihapus");
+            KoneksiDatabase.tutupKoneksi(koneksi);
+        } catch (SQLException ex) {
+            Logger.getLogger(KategoriDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public Kategori cariById(Integer id){
