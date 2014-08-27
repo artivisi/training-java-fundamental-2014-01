@@ -29,6 +29,7 @@ public class CustomerImporter {
            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
             
             while((data = br.readLine()) != null){
+                noBaris++;
                 System.out.println("Data : "+data);
                 String[] baris = data.split(",");
                 if(baris.length != 5){
