@@ -18,8 +18,8 @@ public class KategoriDemo {
         Kategori k = new Kategori();
         k.setId(100);
         k.setKode("K-001");
-        k.setNama("Terlaris");
-        k.setDefinisi("Panglaris-panglaris");
+        k.setNama("Termanis");
+        k.setDefinisi("terorerot");
 
         System.out.println("ID Kategori" + k.getId());
         System.out.println("Kode Kategori" + k.getKode());
