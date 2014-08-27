@@ -1,38 +1,40 @@
 package com.muhardin.endy.training.pos.demo;
 
+import com.muhardin.endy.training.pos.dao.RegionDao;
 import com.muhardin.endy.training.pos.domain.Region;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
-
-
 public class RegionTest {
+
     public static void main(String[] args) {
-       Format tanggalan = new SimpleDateFormat("dd-MM-yyyy");
-       Region r = new Region();
-        for (int i=1;i<=10;i++){
-        r.setId(i);
-        r.setIdRegion("0001NAD0"+i);
-        r.setProvinsi("NAD"+i);
-        r.setKota("Meulaboh"+i);
-        r.setKecamatan("Aserehe"+i);
-        r.setDesa("Ohey"+i);
-        r.setCreated(new Date());
-        
-        System.out.println("ID region "+r.getId());
-        System.out.println("Kode "+r.getIdRegion());
-        System.out.println("Provinsi "+r.getProvinsi());
-        System.out.println("Kota "+r.getKota());
-        System.out.println("Kecamatan "+r.getKecamatan());
-        System.out.println("Desa "+r.getDesa());
-        System.out.println("Created "+tanggalan.format(r.getCreated()));
-        
-        
-        System.out.println("----------------------------------");
-       
-        
+        Format tanggalan = new SimpleDateFormat("dd-MM-yyyy");
+        RegionDao re = new RegionDao();
+        for (int i = 1; i <= 10; i++) {
+            Region reg = new Region();
+            reg.setId(i);
+            reg.setIdRegion("0001NAD0" + i);
+            reg.setProvinsi("NAD" + i);
+            reg.setKota("Meulaboh" + i);
+            reg.setKecamatan("Aserehe" + i);
+            reg.setDesa("Ohey" + i);
+            reg.setCreated(new Date());
+
+            System.out.println("----------------------------------");
+            re.simpan(reg);
+            tampilin(reg, tanggalan);
         }
+
+    }
+
+    private static void tampilin(Region reg, Format tanggalan) {
+        System.out.println("ID region " + reg.getId());
+        System.out.println("Kode " + reg.getIdRegion());
+        System.out.println("Provinsi " + reg.getProvinsi());
+        System.out.println("Kota " + reg.getKota());
+        System.out.println("Kecamatan " + reg.getKecamatan());
+        System.out.println("Desa " + reg.getDesa());
+        System.out.println("Created " + tanggalan.format(reg.getCreated()));
     }
 }
