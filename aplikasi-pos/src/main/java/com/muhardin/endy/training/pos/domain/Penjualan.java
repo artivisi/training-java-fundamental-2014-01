@@ -17,10 +17,8 @@ public class Penjualan {
     private Integer id;
     private String namaBarang;
     private String namaPembeli;
-    private BigDecimal jmlBarang;
+    private Integer jmlBarang;
     private BigDecimal harga;
-    private BigDecimal stockBarang;
-    private Integer diskon;
     private Date tglPenjualan;
 
     public Integer getId() {
@@ -47,11 +45,11 @@ public class Penjualan {
         this.namaPembeli = namaPembeli;
     }
 
-    public BigDecimal getJmlBarang() {
+    public Integer getJmlBarang() {
         return jmlBarang;
     }
 
-    public void setJmlBarang(BigDecimal jmlBarang) {
+    public void setJmlBarang(Integer jmlBarang) {
         this.jmlBarang = jmlBarang;
     }
 
@@ -63,22 +61,6 @@ public class Penjualan {
         this.harga = harga;
     }
 
-    public BigDecimal getStockBarang() {
-        return stockBarang;
-    }
-
-    public void setStockBarang(BigDecimal stockBarang) {
-        this.stockBarang = stockBarang;
-    }
-
-    public Integer getDiskon() {
-        return diskon;
-    }
-
-    public void setDiskon(Integer diskon) {
-        this.diskon = diskon;
-    }
-
     public Date getTglPenjualan() {
         return tglPenjualan;
     }
@@ -86,5 +68,7 @@ public class Penjualan {
     public void setTglPenjualan(Date tglPenjualan) {
         this.tglPenjualan = tglPenjualan;
     }
+
     
+
 }

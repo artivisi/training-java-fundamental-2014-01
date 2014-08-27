@@ -14,10 +14,10 @@ public class ProdukDemo {
         String kode; // deklarasi
         kode = "P-001"; // inisialisasi
         Produk p = new Produk(); // deklarasi + inisialisasi
-        p.setId(103);
-        p.setKode("P-001");
-        p.setNama("Produk 001");
-        p.setHarga(new BigDecimal("150000.00"));
+        p.setId(102);
+        p.setKode("P-003");
+        p.setNama("Produk 002");
+        p.setHarga(new BigDecimal("130000.00"));
         p.setTanggalKadaluarsa(new Date());
         p.setJumlahStok(10);
 
@@ -31,15 +31,15 @@ public class ProdukDemo {
         Produk p2 = new Produk();
         p2.setId(200);
         p2.setJumlahStok(20);
+        
+        System.out.println("ID p2 : "+p2.getId());
+        System.out.println("ID p : "+p.getId());
+        
+        System.out.println("Jumlah stok p2 "+p2.getJumlahStok());
+        System.out.println("Jumlah stok p "+p.getJumlahStok());
 
-        System.out.println("ID p2 : " + p2.getId());
-        System.out.println("ID p : " + p.getId());
-
-        System.out.println("Jumlah stok p2 " + p2.getJumlahStok());
-        System.out.println("Jumlah stok p " + p.getJumlahStok());
-
-        System.out.println("Jumlah stok " + Produk.getJumlahStok());
-
+        System.out.println("Jumlah stok "+Produk.getJumlahStok());
+        
         ProdukDao pd = new ProdukDao();
 //        pd.simpan(p);
         pd.semuaProduk();
