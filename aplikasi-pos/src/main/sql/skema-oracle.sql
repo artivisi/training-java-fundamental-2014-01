@@ -8,10 +8,10 @@ create table produk(
 );
 
 create table customer(
-    id_csr integer primary let,
-    kode_csr vsrchar2,
-    nama_csr varchar2,
-    alamat_csr varchar2,
+    id_csr integer primary,
+    kode_csr vsrchar2 (10),
+    nama_csr varchar2 (30),
+    alamat_csr varchar2 (50),
     tanggal_daftar date
 );
 
