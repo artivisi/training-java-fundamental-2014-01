@@ -1,0 +1,10 @@
+id_kantorCbg,kode_kantorCbg,nama_kantorCbg,alamat_kantorCbg,noTelp_kantorCbg,namaKepala_kantorCbg
+1,KC-001,KPBBC A,Jawa Barat,0227839847,Bapak Asep
+2,KC-002,KPBBC B,Jawa Timur,0248173618,Bapak Suwiryo
+3,KC-003,KPBBC C,Jawa Tengah,0238173817,Bapak Suwito
+4,KC-004,KPBBC D,DKI Jakarta,0218475938,Bapak Hendra
+5,KC-005,KPBBC E,Sumatra Barat,098274726,Bapak Ogi
+6,KC-006,KPBBC F,Kalimantan Barat,0762837625,Bapak Richard
+7,KC-007,KPBBC G,Papua,0998273816,Bapak Tapapu
+8,KC-008,KPBBC H,NTT,0127381726,Bapak Nawili
+9,KC-009,KPBBC I,NTB,0328374816,Bapak Kariba

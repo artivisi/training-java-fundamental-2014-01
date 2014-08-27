@@ -25,26 +25,14 @@ public class KantorCabangDemo {
         kc.setNoTelp_kantorCbg("022-7123456");
         kc.setNamaKepala_kantorCbg("Bapak Dadang");
     
+        System.out.println("ID Kantor Cabang : "+kc.getId_kantorCbg());
+        System.out.println("Kode : "+kc.getKode_kantorCbg());
+        System.out.println("Nama : "+kc.getNama_kantorCbg());
+        System.out.println("Alamat : "+kc.getAlamat_kantorCbg());
+        System.out.println("No. Telepon : "+kc.getNoTelp_kantorCbg());
+        System.out.println("Nama Kepala : "+kc.getNamaKepala_kantorCbg());
+        
         KantorCabangDao kcd = new KantorCabangDao();
         kcd.simpan(kc);
-        
-        KantorCabang kcx = kcd.cariById(kc.getId_kantorCbg());
-        displayKantorCabang(kcx);
-        
-        System.out.println("=====================");
-        List<KantorCabang> semua = kcd.semuaKantorCabang();
-        for (KantorCabang kantorCabang : semua) {
-        displayKantorCabang(kantorCabang);
-        }
-        System.out.println("=====================");
-    }
-
-    private static void displayKantorCabang(KantorCabang kcx) {
-        System.out.println("ID Kantor Cabang : "+kcx.getId_kantorCbg());
-        System.out.println("Kode : "+kcx.getKode_kantorCbg());
-        System.out.println("Nama : "+kcx.getNama_kantorCbg());
-        System.out.println("Alamat : "+kcx.getAlamat_kantorCbg());
-        System.out.println("No. Telepon : "+kcx.getNoTelp_kantorCbg());
-        System.out.println("Nama Kepala : "+kcx.getNamaKepala_kantorCbg());
     }
 }
