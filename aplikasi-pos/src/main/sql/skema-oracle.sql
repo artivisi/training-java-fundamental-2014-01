@@ -1,10 +1,7 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> da7e4b59aa825fad2d93aeead82119c9c7df7710
-=======
->>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
 create table produk(
   id integer primary key,
   kode varchar2,
@@ -13,7 +10,6 @@ create table produk(
   tanggal_kadaluarsa date
 );
 
-<<<<<<< HEAD
 <<<<<<< HEAD
 create table kantor_cabang(
     id_kantorCbg integer primary key,
@@ -24,8 +20,6 @@ create table kantor_cabang(
     namaKepala_kantorCbg varchar2 (30)
 );
 =======
-=======
->>>>>>> aba47c60fffa14c22b0ab247d368642611ca5934
 create table customer(
     id_csr integer primary,
     kode_csr vsrchar2 (10),
