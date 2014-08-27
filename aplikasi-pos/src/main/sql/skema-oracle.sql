@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 create table produk(
   id integer primary key,
   kode varchar2,
@@ -7,41 +6,14 @@ create table produk(
   tanggal_kadaluarsa date
 );
 
-create table customer(
-    id_csr integer primary let,
-    kode_csr vsrchar2,
-    nama_csr varchar2,
-    alamat_csr varchar2,
-    tanggal_daftar date
-);
-
 create table kantor_cabang(
-    id_kantorCbg integer primary let,
-    kode_kantorCbg vsrchar2,
-    nama_kantorCbg varchar2,
-    alamat_kantorCbg varchar2,
-    noTelp_kantorCbg varchar2,
-    namaKepala_kantorCbg varchar2
+    id_kantorCbg integer primary key,
+    kode_kantorCbg varchar2 (10),
+    nama_kantorCbg varchar2 (30),
+    alamat_kantorCbg varchar2 (50),
+    noTelp_kantorCbg varchar2 (20),
+    namaKepala_kantorCbg varchar2 (30)
 );
-
-
-
-=======
--- create table produk(
---   id integer primary key,
---   kode varchar2,
---   nama varchar2,
---   harga decimal(19,2),
---   tanggal_kadaluarsa date
--- );
--- 
--- create table customer(
---     id_csr integer primary key,
---     kode_csr varchar2(20),
---     nama_csr varchar2(255),
---     alamat_csr varchar2(255),
---     tanggal_daftar date
--- );
 
 create table customer(
     id_csr integer primary key,
@@ -75,4 +47,4 @@ create table kategori(
     kode_kat varchar (10),
     nama_kat varchar (30)
 );
->>>>>>> 502154c58d5a5e58bb7aebb4a9078f7b67811a6e
+
