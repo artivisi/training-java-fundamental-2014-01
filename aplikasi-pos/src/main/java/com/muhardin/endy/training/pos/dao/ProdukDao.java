@@ -15,23 +15,41 @@ import java.util.logging.Logger;
 public class ProdukDao {
 
     private static final String SQL_INSERT = "insert into produk (id,kode,nama,harga,tanggal_kadaluarsa)"
-            + "values (?,?,?,?,?)";
+            + "values (produk_id_seq.nextval,?,?,?,?)";
+    private static final String SQL_UPDATE = "update produk set "
+            + "kode = ?, "
+            + "nama = ?, "
+            + "harga = ?, "
+            + "tanggal_kadaluarsa = ? "
+            + "where id = ?";
     private static final String SQL_DELETE = "delete from produk where id = ?";
     private static final String SQL_SELECT_BY_ID = "select * from produk where id = ?";
     private static final String SQL_SELECT_SEMUA = "select * from produk";
 
     public void simpan(Produk p) {
         try {
-            Connection koneksi = KoneksiDatabase.bukaKoneksi();
-            PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT);
-            ps.setInt(1, p.getId());
-            ps.setString(2, p.getKode());
-            ps.setString(3, p.getNama());
-            ps.setBigDecimal(4, p.getHarga());
-            ps.setDate(5, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
-            int hasil = ps.executeUpdate();
-            System.out.println(hasil + " record berhasil diinsert");
-            KoneksiDatabase.tutupKoneksi(koneksi);
+            if(p.getId() == null){
+                Connection koneksi = KoneksiDatabase.bukaKoneksi();
+                PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT);
+                ps.setString(1, p.getKode());
+                ps.setString(2, p.getNama());
+                ps.setBigDecimal(3, p.getHarga());
+                ps.setDate(4, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
+                int hasil = ps.executeUpdate();
+                System.out.println(hasil + " record berhasil diinsert");
+                KoneksiDatabase.tutupKoneksi(koneksi);
+            } else {
+                Connection koneksi = KoneksiDatabase.bukaKoneksi();
+                PreparedStatement ps = koneksi.prepareStatement(SQL_UPDATE);
+                ps.setString(1, p.getKode());
+                ps.setString(2, p.getNama());
+                ps.setBigDecimal(3, p.getHarga());
+                ps.setDate(4, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
+                ps.setInt(5, p.getId());
+                int hasil = ps.executeUpdate();
+                System.out.println(hasil + " record berhasil diupdate");
+                KoneksiDatabase.tutupKoneksi(koneksi);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(ProdukDao.class.getName()).log(Level.SEVERE, null, ex);
         }
