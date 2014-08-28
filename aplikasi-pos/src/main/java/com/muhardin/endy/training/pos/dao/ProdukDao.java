@@ -31,10 +31,10 @@ public class ProdukDao {
             if(p.getId() == null){
                 Connection koneksi = KoneksiDatabase.bukaKoneksi();
                 PreparedStatement ps = koneksi.prepareStatement(SQL_INSERT);
-                ps.setString(2, p.getKode());
-                ps.setString(3, p.getNama());
-                ps.setBigDecimal(4, p.getHarga());
-                ps.setDate(5, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
+                ps.setString(1, p.getKode());
+                ps.setString(2, p.getNama());
+                ps.setBigDecimal(3, p.getHarga());
+                ps.setDate(4, new java.sql.Date(p.getTanggalKadaluarsa().getTime()));
                 int hasil = ps.executeUpdate();
                 System.out.println(hasil + " record berhasil diinsert");
                 KoneksiDatabase.tutupKoneksi(koneksi);
