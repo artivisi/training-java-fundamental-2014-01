@@ -110,9 +110,4 @@ public class KantorCabangDao {
         }
         return hasil;
     }
-    
-    public static void main(String[] args) {
-        KantorCabangDao d = new KantorCabangDao();
-        d.semuaKantorCabang();
-    }
 }
