@@ -3,3 +3,4 @@ target
 
 # Netbeans Ignore
 nb-configuration.xml
+/aplikasi-pos-web/nbactions.xml
