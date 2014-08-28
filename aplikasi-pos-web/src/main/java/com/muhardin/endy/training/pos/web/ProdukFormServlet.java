@@ -39,7 +39,10 @@ public class ProdukFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Produk p = new Produk();
-        p.setId(Integer.parseInt(req.getParameter("id")));
+        String id = req.getParameter("id");
+        if(id != null && !id.isEmpty()){
+            p.setId(Integer.parseInt(id));
+        }
         p.setKode(req.getParameter("kode"));
         p.setNama(req.getParameter("nama"));
         p.setHarga(new BigDecimal(req.getParameter("harga")));
