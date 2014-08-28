@@ -20,10 +20,18 @@
         <servlet-name>ProdukListServlet</servlet-name>
         <url-pattern>/produk/list</url-pattern>
     </servlet-mapping>
+ <servlet-mapping>
+        <servlet-name>ProdukFormServlet</servlet-name>
+        <url-pattern>/produk/form</url-pattern>
+    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>RegionListServlet</servlet-name>
         <url-pattern>/region/list</url-pattern>
     </servlet-mapping>
+
+
+
     <session-config>
         <session-timeout>
             30
