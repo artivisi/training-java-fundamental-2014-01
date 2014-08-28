@@ -12,6 +12,10 @@
         <servlet-name>ProdukFormServlet</servlet-name>
         <servlet-class>com.muhardin.endy.training.pos.web.ProdukFormServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegionListServlet</servlet-name>
+        <servlet-class>com.muhardin.endy.training.pos.web.RegionListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HaloServlet</servlet-name>
         <url-pattern>/halo.php</url-pattern>
@@ -24,6 +28,12 @@
         <servlet-name>ProdukFormServlet</servlet-name>
         <url-pattern>/produk/form</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>RegionListServlet</servlet-name>
+        <url-pattern>/region/list</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30
