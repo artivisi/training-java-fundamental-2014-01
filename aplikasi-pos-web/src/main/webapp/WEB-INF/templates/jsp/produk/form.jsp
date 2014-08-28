@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +26,8 @@
                     </tr>
                     <tr>
                         <td>Tanggal Kadaluarsa</td>
-                        <td><input type="text" name="tanggalKadaluarsa" value="${produk.tanggalKadaluarsa}"></td>
+                        <fmt:formatDate pattern="dd-MM-yyyy" var="tanggalKadaluarsa" value="${produk.tanggalKadaluarsa}" />
+                        <td><input type="text" name="tanggalKadaluarsa" value="${tanggalKadaluarsa}"></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
