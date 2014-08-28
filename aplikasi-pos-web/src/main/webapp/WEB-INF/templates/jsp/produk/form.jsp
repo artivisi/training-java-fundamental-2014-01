@@ -13,19 +13,19 @@
                 <tbody>
                     <tr>
                         <td>Kode</td>
-                        <td><input type="text" name="kode" value="${p.kode}"></td>
+                        <td><input type="text" name="kode" value="${produk.kode}"></td>
                     </tr>
                     <tr>
                         <td>Nama</td>
-                        <td><input type="text" name="nama" value="${p.nama}"></td>
+                        <td><input type="text" name="nama" value="${produk.nama}"></td>
                     </tr>
                     <tr>
                         <td>Harga</td>
-                        <td><input type="text" name="harga" value="${p.harga}"></td>
+                        <td><input type="text" name="harga" value="${produk.harga}"></td>
                     </tr>
                     <tr>
                         <td>Tanggal Kadaluarsa</td>
-                        <td><input type="text" name="tanggalKadaluarsa" value="${p.tanggalKadaluarsa}"></td>
+                        <td><input type="text" name="tanggalKadaluarsa" value="${produk.tanggalKadaluarsa}"></td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
