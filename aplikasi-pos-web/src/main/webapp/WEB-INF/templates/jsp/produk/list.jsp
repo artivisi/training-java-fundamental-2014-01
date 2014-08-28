@@ -9,6 +9,8 @@
     <body>
         <h1>Daftar Produk</h1>
         
+        <a href="form">Tambah Data Produk</a>
+        
         Jumlah produk : ${daftarProduk.size()}
         
         <table border="1">
