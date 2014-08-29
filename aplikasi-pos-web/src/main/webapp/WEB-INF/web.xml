@@ -21,6 +21,10 @@
         <servlet-class>com.muhardin.endy.training.pos.web.ProdukUploadServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ProdukHapusServlet</servlet-name>
+        <servlet-class>com.muhardin.endy.training.pos.web.ProdukHapusServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>RegionListServlet</servlet-name>
         <servlet-class>com.muhardin.endy.training.pos.web.RegionListServlet</servlet-class>
     </servlet>
@@ -45,6 +49,10 @@
         <url-pattern>/produk/upload</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ProdukHapusServlet</servlet-name>
+        <url-pattern>/produk/hapus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>RegionListServlet</servlet-name>
         <url-pattern>/region/list</url-pattern>
     </servlet-mapping>
@@ -55,7 +63,7 @@
     <servlet>
         <servlet-name>GudangFormServlet</servlet-name>
         <servlet-class>com.muhardin.endy.training.pos.web.GudangFormServlet</servlet-class>
-    </servlet> 
+    </servlet>
     <servlet-mapping>
         <servlet-name>GudangListServlet</servlet-name>
         <url-pattern>/Gudang/List</url-pattern>
