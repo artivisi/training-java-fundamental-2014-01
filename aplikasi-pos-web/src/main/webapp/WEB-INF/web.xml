@@ -17,6 +17,10 @@
         <servlet-class>com.muhardin.endy.training.pos.web.ProdukDownloadServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>ProdukUploadServlet</servlet-name>
+        <servlet-class>com.muhardin.endy.training.pos.web.ProdukUploadServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>RegionListServlet</servlet-name>
         <servlet-class>com.muhardin.endy.training.pos.web.RegionListServlet</servlet-class>
     </servlet>
@@ -35,6 +39,10 @@
     <servlet-mapping>
         <servlet-name>ProdukDownloadServlet</servlet-name>
         <url-pattern>/produk/download</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProdukUploadServlet</servlet-name>
+        <url-pattern>/produk/upload</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegionListServlet</servlet-name>
