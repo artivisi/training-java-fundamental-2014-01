@@ -36,7 +36,7 @@ public class GudangFormServlet extends HttpServlet {
             req.setAttribute("gudang", new Gudang());
         }
         
-        req.getRequestDispatcher("/WEB-INF/templates/jsp/produk/formGudang.jsp")
+        req.getRequestDispatcher("/WEB-INF/templates/jsp/gudang/formGudang.jsp")
                 .forward(req, resp);
     }
 

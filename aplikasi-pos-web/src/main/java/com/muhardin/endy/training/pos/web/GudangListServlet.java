@@ -27,7 +27,7 @@ public class GudangListServlet extends HttpServlet {
         GudangDao pd = new GudangDao();
         List<Gudang> data = pd.semuaGudang();
         req.setAttribute("daftarGudang", data);
-        req.getRequestDispatcher("/WEB-INF/templates/jsp/produk/listGudang.jsp")
+        req.getRequestDispatcher("/WEB-INF/templates/jsp/gudang/listGudang.jsp")
                 .forward(req, resp);
     }
     
