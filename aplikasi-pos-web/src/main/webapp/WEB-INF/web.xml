@@ -48,6 +48,22 @@
         <servlet-name>RegionListServlet</servlet-name>
         <url-pattern>/region/list</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>GudangListServlet</servlet-name>
+        <servlet-class>com.muhardin.endy.training.pos.web.GudangListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GudangFormServlet</servlet-name>
+        <servlet-class>com.muhardin.endy.training.pos.web.GudangFormServlet</servlet-class>
+    </servlet> 
+    <servlet-mapping>
+        <servlet-name>GudangListServlet</servlet-name>
+        <url-pattern>/Gudang/List</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GudangFormServlet</servlet-name>
+        <url-pattern>/Gudang/Form</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>sitemesh</filter-name>
         <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
