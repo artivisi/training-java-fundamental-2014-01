@@ -41,15 +41,15 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<%= request.getContextPath() %>">Home</a></li>
-            <li><a href="<%= request.getServletPath() %>/About.html">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="<%= request.getContextPath() %>/">Home</a></li>
+            <li><a href="<%= request.getContextPath() %>/About.html">About</a></li>
+            <li><a href="<%= request.getContextPath() %>/produk/list">Produk</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="<%= request.getContextPath() %>/region/list">Region</a></li>
+                <li><a href="<%= request.getContextPath() %>/gudang/list">Gudang</a></li>
+                <li><a href="<%= request.getContextPath() %>/customer/list">Customer</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
