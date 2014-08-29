@@ -10,6 +10,7 @@
         <h1>Daftar Produk</h1>
         
         <a href="form">Tambah Data Produk</a>
+        <a href="download">Download Data Produk</a>
         
         Jumlah produk : ${daftarProduk.size()}
         
