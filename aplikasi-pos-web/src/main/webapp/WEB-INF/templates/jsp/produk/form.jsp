@@ -8,35 +8,40 @@
     </head>
     <body>
         <h1>Edit Produk</h1>
-        
-        <form method="POST">
-            <table border="1">
-                <tbody>
-                    <tr>
-                        <td>Kode</td>
-                        <td><input type="text" name="kode" value="${produk.kode}"></td>
-                    </tr>
-                    <tr>
-                        <td>Nama</td>
-                        <td><input type="text" name="nama" value="${produk.nama}"></td>
-                    </tr>
-                    <tr>
-                        <td>Harga</td>
-                        <td><input type="text" name="harga" value="${produk.harga}"></td>
-                    </tr>
-                    <tr>
-                        <td>Tanggal Kadaluarsa</td>
-                        <fmt:formatDate pattern="dd-MM-yyyy" var="tanggalKadaluarsa" value="${produk.tanggalKadaluarsa}" />
-                        <td><input type="text" name="tanggalKadaluarsa" value="${tanggalKadaluarsa}"></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><input type="submit" value="Simpan"></td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <form method="POST"  class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="kode" class="col-sm-2 control-label">Kode</label>
+                <div class="col-sm-10">      
+                    <input type="text" id="kode" name="kode" value="${produk.kode}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nama" class="col-sm-2 control-label">Nama</label>
+                <div class="col-sm-10">      
+                    <input type="text" id="nama" name="nama" value="${produk.nama}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="harga" class="col-sm-2 control-label">Harga</label>
+                <div class="col-sm-10">      
+                    <input type="text"  id="harga" name="harga" value="${produk.harga}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tanggalKadaluarsa" class="col-sm-2 control-label">Tanggal Kadaluarsa</label>
+                <fmt:formatDate pattern="dd-MM-yyyy" var="tanggalKadaluarsa" value="${produk.tanggalKadaluarsa}" />
+                <div class="col-sm-10">      
+                    <input type="text" id="tanggalKadaluarsa" name="tanggalKadaluarsa" value="${tanggalKadaluarsa}">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Simpan</button>
+                </div>
+            </div>
 
         </form>
-        
+
     </body>
 </html>
